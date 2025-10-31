@@ -9,26 +9,18 @@
     <style>
         /* Dark Mode Variables */
         :root {
-            --bg-primary: #121212;
-            --bg-secondary: #1e1e1e;
+            --bg-primary: rgb(48, 47, 47);
+            --bg-secondary: rgb(48, 47, 47);
             --text-primary: #f0f0f0;
             --text-secondary: #a0a0a0;
-            --accent: #9c27b0; /* Purple color */
+            --accent: red; /* Purple color */
             --card-bg: #2a2a2a;
             --border-color: #333333;
             --transition: all 0.3s ease;
         }
 
         /* Light Mode Variables */
-        .light-mode {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --text-primary: #212529;
-            --text-secondary: #6c757d;
-            --accent: #7b1fa2; /* Purple color for light mode */
-            --card-bg: #ffffff;
-            --border-color: #e0e0e0;
-        }
+
 
         * {
             margin: 0;
@@ -69,7 +61,6 @@
 
         h1 {
             font-size: 3.2rem;
-            background: linear-gradient(135deg, var(--accent), #ba68c8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -110,10 +101,6 @@
             transition: var(--transition);
         }
 
-        a:hover {
-            color: #ba68c8;
-        }
-
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -130,18 +117,12 @@
             box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
         }
 
-        .btn:hover {
-            background: #ba68c8;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
-        }
-
         /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(18, 18, 18, 0.95);
+            background: rgb(48, 47, 47);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 20px 0;
@@ -163,7 +144,7 @@
         .logo {
             font-size: 1.6rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), #ba68c8);
+            background: var(--accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -364,13 +345,12 @@
 
         .portfolio-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(156, 39, 176, 0.2);
             border-color: var(--accent);
         }
 
         .portfolio-img {
             height: 180px;
-            background: linear-gradient(135deg, var(--accent), #ba68c8);
+            background: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -403,84 +383,12 @@
 
         .portfolio-tag {
             padding: 4px 11px;
-            background: rgba(156, 39, 176, 0.15);
             color: var(--accent);
             border-radius: 12px;
             font-size: 0.75rem;
             font-weight: 500;
         }
-
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-        }
-
-        .contact-info h2 {
-            margin-bottom: 35px;
-        }
-
-        .contact-info p {
-            font-size: 1.05rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .contact-details {
-            margin-top: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 18px;
-            margin-bottom: 25px;
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            background: var(--card-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: var(--accent);
-            border: 1px solid var(--border-color);
-            flex-shrink: 0;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 22px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px 18px;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: var(--bg-secondary);
-            box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.1);
-        }
-
-        .contact-form textarea {
-            height: 140px;
-            resize: vertical;
-        }
+        
 
         /* Footer */
         footer {
@@ -500,7 +408,7 @@
         .footer-logo {
             font-size: 1.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), #ba68c8);
+            background: var(--accent);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -627,14 +535,6 @@
         <div class="container">
             <nav>
                 <div class="logo">Acharit</div>
-                <div class="nav-right">
-                    <button class="theme-toggle" id="themeToggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -744,8 +644,7 @@
                 <div class="footer-links">
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#">Feature</a>
                 </div>
                 <p class="copyright">© 2024 Acharit. All rights reserved.</p>
             </div>
@@ -753,33 +652,7 @@
     </footer>
 
     <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
-
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
         
-        if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            
-            if (body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                localStorage.setItem('theme', 'light');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
