@@ -114,7 +114,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             font-size: 0.85rem;
-            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
         }
 
         /* Header & Navigation */
@@ -234,7 +233,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 15% 25%, rgba(156, 39, 176, 0.08) 0%, transparent 30%);
         }
 
         .hero-content {
@@ -527,6 +525,117 @@
                 height: 38px;
             }
         }
+
+        .cover{
+            display: flex;
+            height: auto;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .companies-section {
+            background: rgb(48, 47, 47); 
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: white
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .companies-scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 10px 5px;
+            scrollbar-width: thin;
+            scrollbar-color: red #f1f1f1;
+        }
+
+        /* Custom scrollbar for Webkit browsers */
+        .companies-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .companies-scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .companies-scroll-container::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 10px;
+        }
+
+        .company-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 0 0 auto;
+        }
+
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border: 3px solid #f8f9fa;
+        }
+
+        .company-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .company-logo img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+        }
+
+        .company-name {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: white
+            text-align: center;
+            font-weight: 500;
+            max-width: 100px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .companies-section {
+                padding: 20px 15px;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .company-logo {
+                width: 85px;
+                height: 85px;
+            }
+            
+            .company-name {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -550,7 +659,7 @@
             <div class="hero-content">
                 <h1>Acharit</h1>
                 <p>Expert Researcher & Social Media Strategist specializing in data-driven insights and compelling digital storytelling.</p>
-                <a href="#portfolio" class="btn">View My Work</a>
+                <a href="#portfolio" class="btn">View Works</a>
                 <div class="social-links">
                     <a href="https://x.com/Lucidjuiceice"><i class="fab fa-twitter"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=61582674347801"><i class="fab fa-facebook"></i></a>
@@ -564,17 +673,15 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>With over 8 years of experience in research and digital media, I specialize in transforming complex data into engaging narratives that resonate with diverse audiences.</p>
-                    <p>My expertise spans quantitative and qualitative research methodologies, social media analytics, content strategy, and audience engagement across multiple platforms.</p>
-                    <p>I believe in the power of data to tell stories that drive meaningful conversations and create lasting impact in the digital space.</p>
+                    <h2>About</h2>
+                    <p>With over 8 years of research on digital media, this site specialize in transforming complex data into engaging the posts to people to see some sides.</p>
+                    <p>This expertise spans quantitative and qualitative research methodologies, social media analytics and content strategy across multiple platforms.</p>
+                    <p>We know in the power of data to tell the truth that drive and create lasting impact in the reality.</p>
                     <div class="skills">
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Social Media Strategy</span>
-                        <span class="skill-tag">Content Creation</span>
-                        <span class="skill-tag">Audience Research</span>
-                        <span class="skill-tag">Trend Analysis</span>
-                        <span class="skill-tag">Digital Storytelling</span>
+                        <span class="skill-tag">By reporting on Social Media ...</span>
+                        <span class="skill-tag">By Contents videos</span>
+                        <span class="skill-tag">BY Researchers</span>
+                        <span class="skill-tag">By Analytics site</span>
                     </div>
                 </div>
                 <div class="about-image">
@@ -594,7 +701,7 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Social Media Impact Report</h3>
+                        <h3>On Social Media</h3>
                         <p>Comprehensive analysis of social media engagement patterns across major platforms, revealing key insights for brand strategy optimization.</p>
                         <div class="portfolio-tags">
                             <span class="portfolio-tag">Research</span>
@@ -605,15 +712,14 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <i class="fas fa-hashtag"></i>
+                        <i class="fas fa-search"></i>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Viral Content Strategy</h3>
-                        <p>Developed and executed a content strategy that increased organic reach by 300% and engagement by 450% across multiple social platforms.</p>
+                        <h3>Researched Projects</h3>
+                        <p>These Projects are hiddent from social meadia. Some of them are out of goverment law but needed to know that why sometime you need to say yourself "I am Goverment" <a href=""> See me</a></p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag">Strategy</span>
-                            <span class="portfolio-tag">Content</span>
-                            <span class="portfolio-tag">Growth</span>
+                            <span class="portfolio-tag">Activity</span>
+                            <span class="portfolio-tag">Goverment Control</span>
                         </div>
                     </div>
                 </div>
@@ -622,18 +728,29 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Audience Behavior Study</h3>
-                        <p>In-depth research on digital consumer behavior, identifying key patterns and preferences that informed product development and marketing approaches.</p>
+                        <h3>Hidden Minds</h3>
+                        <p>Every can fool us. Our life is Entertaning with massive emotion when the players are born this human race become chess. </p>
                         <div class="portfolio-tags">
-                            <span class="portfolio-tag">Research</span>
-                            <span class="portfolio-tag">Consumer Insights</span>
-                            <span class="portfolio-tag">Strategy</span>
+                            <span class="portfolio-tag">Free ?</span>
+                            <span class="portfolio-tag">playing ?</span>
+                            <span class="portfolio-tag">Because ?</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+     <!-- Cover----------------------- -->
+      <section class="cover">
+        <section class="companies-section">
+        <h2 class="section-title">Reference from</h2>
+        <div class="companies-scroll-container">
+            <!-- Company items will be generated by JavaScript -->
+        </div>
+    </section>
+      </section>
+    
 
 
     <!-- Footer -->
@@ -652,6 +769,35 @@
     </footer>
 
     <script>
+                // Company data
+        const companies = [
+            { name: "Tor projects", logo: "Tor", color: "#800080" },
+            { name: "Youtube", logo: "Utube", color: "#e74c3c" },
+            { name: "BBC", logo: "BBC", color: "#e74c3c" },
+            { name: "Fox News", logo: "Fox", color: "#3498db" },
+       ];    
+
+            // Function to create company items
+        function createCompanyItems() {
+            const container = document.querySelector('.companies-scroll-container');
+            
+            companies.forEach(company => {
+                const item = document.createElement('div');
+                item.className = 'company-item';
+                
+                item.innerHTML = `
+                    <div class="company-logo" style="background-color: ${company.color}">
+                        <span style="color: white; font-weight: bold; font-size: 1.5rem;">${company.logo}</span>
+                    </div>
+                    <div class="company-name">${company.name}</div>
+                `;
+                
+                container.appendChild(item);
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', createCompanyItems);
         
 
         // Mobile Menu Toggle
@@ -715,7 +861,11 @@
                 }
             }
         });
+
+
     </script>
+
+
 </body>
 </html>
 
